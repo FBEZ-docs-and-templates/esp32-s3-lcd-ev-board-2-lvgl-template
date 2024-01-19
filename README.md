@@ -7,8 +7,9 @@ Template for starting with the ESP32-S3-LCD-EV-Board-2 based on esp_bsp but stri
 1. Build, flash to check everything is fine. Specify target and port if missing.
 2. Exit from the monitor (`CTRL+T, CTRL+X`)
 3. Create component in the `components` folder (`cd components` , `idf.py create-component <component_name>`) or use vscode create component
-4. Go to the component `main.c` and add `#include "lvgl.h"`
-5. Add `assets` folder for [fonts](https://lvgl.io/tools/fontconverter) and [images](https://lvgl.io/tools/imageconverter).
+4. Go to the component `main.c` and add `#include "lvgl.h"`. Add `#include "component_name.h"` in the project `main.c`.
+5. Add `REQUIRES "lvgl"` in the CMakefile inside the component folder
+6. Add `assets` folder for [fonts](https://lvgl.io/tools/fontconverter) and [images](https://lvgl.io/tools/imageconverter).
 
 
 When converting a font, check the include test and the beginning of the file, it must be
